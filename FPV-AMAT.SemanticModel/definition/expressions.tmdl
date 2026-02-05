@@ -1,0 +1,21 @@
+expression host = "adb-7482314536515725.5.azuredatabricks.net" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 8b235fd0-b390-47c8-b8b5-dd478e15ff8b
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+
+expression http = "/sql/1.0/warehouses/d3660a83b64aaaff" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 044b494a-b757-4804-9643-203a9d3c1b26
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+
+expression catalogo = "precatalog" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 03d2c770-d99e-41d8-854e-54f115404382
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+

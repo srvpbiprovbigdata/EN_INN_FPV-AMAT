@@ -1,0 +1,420 @@
+table Medidas
+	lineageTag: 276785c0-8804-456a-98fc-59042049ae05
+
+	measure 'Sobredimensionamiento LC1 ISI' =
+			
+			VAR ValorMax = MAX(Isigenere[LC1max_kg])
+			VAR Resultado = (ValorMax / 1804.01) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+			
+			/*(MAX(Isigenere[LC1max(kg)]) / 1804.01) * 100*/
+		formatString: 0.0000;-0.0000;"-"
+		lineageTag: ac76ed47-ad9f-46a4-94c3-3679467f0565
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sobredimensionamiento LC2 ISI' =
+			
+			VAR ValorMax = MAX(Isigenere[LC2max_kg])
+			VAR Resultado = (ValorMax / 1804.01) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: aba2820a-3f30-48b2-aa3d-5ae4817e3735
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Aterrizamiento = ```
+			
+			/*
+			(CALCULATE
+			    (COUNTROWS(CondAmb),
+			        FILTER(
+			            CondAmb, 
+			            'CondAmb'[h(m)] <= 5
+			        )
+			    )
+			) / 168 * 100
+			*/
+			
+			VAR FilasValidas =
+			    FILTER(
+			        CondAmb,
+			        CondAmb[h(m)] = CondAmb[h(m)]  -- excluye NaN
+			    )
+			VAR TotalValidas =
+			    COUNTROWS(FilasValidas)
+			VAR Condicion =
+			    FILTER(
+			        FilasValidas,
+			        CondAmb[h(m)] <= 5
+			    )
+			RETURN
+			COALESCE(
+			    DIVIDE(
+			        COUNTROWS(Condicion),
+			        TotalValidas
+			    ) * 100,
+			    0
+			)
+			
+			```
+		formatString: 0
+		lineageTag: e27f68b2-952a-459e-80ea-966b0473c512
+
+	measure 'Sobredimensionamiento LC3 ISI' =
+			
+			VAR ValorMax = MAX(Isigenere[LC3max_kg])
+			VAR Resultado = (ValorMax / 1804.01) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: bfbeba58-aba4-4892-b273-6851c6dcadd4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC4 ISI' =
+			
+			VAR ValorMax = MAX(Isigenere[LC4max_kg])
+			VAR Resultado = (ValorMax / 1804.01) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: 8cbea1b7-94fb-437f-8636-4970ca911994
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC5 ISI' =
+			
+			VAR ValorMax = MAX(Isigenere[LC5max_kg])
+			VAR Resultado = (ValorMax / 1804.01) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: cefe232a-a978-4ca2-813b-31999773958e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC6 ISI' =
+			
+			VAR ValorMax = MAX(Isigenere[LC6max_kg])
+			VAR Resultado = (ValorMax / 1804.01) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: e80eff0d-1e42-4f25-bdad-3fe67971595d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC7 ISI' =
+			
+			VAR ValorMax = MAX(Isigenere[LC7max_kg])
+			VAR Resultado = (ValorMax / 1804.01) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: 4dc7d226-c811-47e3-b8fc-d7734e31559b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC1 OCE' =
+			
+			VAR ValorMax = MAX(OceanSun[LC1max])
+			VAR Resultado = (ValorMax / 1034.15) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+			
+			/*(MAX(OceanSun[LC1max]) / 1034.15) * 100*/
+		lineageTag: d0ee2d10-2abf-487d-913b-ed737eb22d8e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC2 OCE' =
+			
+			VAR ValorMax = MAX(OceanSun[LC2max])
+			VAR Resultado = (ValorMax / 1034.15) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: 4f0eb637-2b8c-46bf-b470-252ca9f18701
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC3 OCE' =
+			
+			VAR ValorMax = MAX(OceanSun[LC3max])
+			VAR Resultado = (ValorMax / 1034.15) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: dbc61c16-0307-47c8-98e0-e69bd75a5324
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC4 OCE' =
+			
+			VAR ValorMax = MAX(OceanSun[LC4max])
+			VAR Resultado = (ValorMax / 1034.15) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: bc60e78a-a46b-4951-8047-01f8e10bdd09
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC5 OCE' =
+			
+			VAR ValorMax = MAX(OceanSun[LC5max])
+			VAR Resultado = (ValorMax / 1034.15) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: c5006176-2509-453d-bc0d-53789c6b6593
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobredimensionamiento LC6 OCE' =
+			
+			VAR ValorMax = MAX(OceanSun[LC6max])
+			VAR Resultado = (ValorMax / 1034.15) * 100
+			RETURN
+			IF(
+			    ISBLANK(ValorMax),
+			    "-",
+			    Resultado
+			)
+		lineageTag: d6b495bf-7c43-4fb9-9d1a-fb07ecacb398
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fatiga ISI' = ```
+			
+			VAR FilasValidas =
+			    FILTER(
+			        CondAmb,
+			        CondAmb[Tp(s)] = CondAmb[Tp(s)]  -- excluye NaN
+			    )
+			VAR TotalValidas =
+			    COUNTROWS(FilasValidas)
+			VAR Condicion =
+			    FILTER(
+			        FilasValidas,
+			        CondAmb[Tp(s)] >= 1.5
+			    )
+			RETURN
+			COALESCE(
+			    DIVIDE(
+			        COUNTROWS(Condicion),
+			        TotalValidas
+			    ) * 100,
+			    0
+			)
+			
+			/*
+			(CALCULATE(COUNTROWS(CondAmb),
+			 FILTER(CondAmb, 
+			 'CondAmb'[Tp(s)] >= 1.5)))
+			  / 168 * 100
+			*/
+			```
+		lineageTag: a0d9d0d5-e8d1-4b40-bdf4-0f41c67012f2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fatiga OCE' = ```
+			
+			VAR FilasValidas =
+			    FILTER(
+			        CondAmb,
+			        CondAmb[Tp(s)] = CondAmb[Tp(s)]  -- excluye NaN
+			    )
+			VAR TotalValidas =
+			    COUNTROWS(FilasValidas)
+			VAR Condicion =
+			    FILTER(
+			        FilasValidas,
+			        CondAmb[Tp(s)] >= 2.27
+			    )
+			RETURN
+			COALESCE(
+			    DIVIDE(
+			        COUNTROWS(Condicion),
+			        TotalValidas
+			    ) * 100,
+			    0
+			)
+			
+			/*
+			(CALCULATE(COUNTROWS(CondAmb),
+			 FILTER(CondAmb, 
+			 'CondAmb'[Tp(s)] >= 2.27)))
+			  / 168 * 100
+			*/
+			```
+		lineageTag: 97b4d672-dc95-4f56-9cc6-1d14c64906e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Azimut ISI' = ```
+			
+			VAR FilasValidas =
+			    FILTER(
+			        Isigenere,
+			        Isigenere[Yawmean_deg] = Isigenere[Yawmean_deg]  -- excluye NaN
+			    )
+			VAR TotalValidas =
+			    COUNTROWS(FilasValidas)
+			VAR Condicion =
+			    FILTER(
+			        FilasValidas,
+			        Isigenere[Yawmean_deg] >= 5 && Isigenere[Yawmean_deg] <= 355
+			    )
+			RETURN
+			COALESCE(
+			    DIVIDE(
+			        COUNTROWS(Condicion),
+			        TotalValidas
+			    ) * 100,
+			    0
+			)
+			
+			/*
+			(CALCULATE(COUNTROWS(Isigenere),
+			 FILTER(Isigenere, 
+			 'Isigenere'[Yawmean(deg)] >= 5 && Isigenere[Yawmean(deg)] <= 355)))
+			  / 168 * 100
+			*/
+			```
+		lineageTag: 38d62c32-78a7-482b-85d6-a3f73d3d2aaf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Disponibilidad O&M' = ```
+			
+			VAR FilasValidas =
+			    FILTER(
+			        CondAmb,
+			        CondAmb[MaxWindVel(m/s)] = CondAmb[MaxWindVel(m/s)] && CondAmb[Hs(m)] = CondAmb[Hs(m)] && CondAmb[h(m)] = CondAmb[h(m)]  -- excluye NaN
+			    )
+			VAR TotalValidas =
+			    COUNTROWS(FilasValidas)
+			VAR Condicion =
+			    FILTER(
+			        FilasValidas,
+			        CondAmb[MaxWindVel(m/s)] >= 12 || CondAmb[Hs(m)] >= 0.2 || CondAmb[h(m)] <= 5
+			    )
+			RETURN
+			COALESCE(
+			    DIVIDE(
+			        COUNTROWS(Condicion),
+			        TotalValidas
+			    ) * 100,
+			    0
+			)
+			
+			// creo que se pueden contar las filas mientras una de ellas no tenga valores NaN en las 3 columnas 
+			// porque mientras una de las 3 columnas tenga valor, esa fila sería necesario contarla.
+			// PERO el usuario me confirma que lo quiere tal y como está hecho ahora.
+			
+			/*
+			(168 -
+			    (CALCULATE
+			        (COUNTROWS(CondAmb),
+			        FILTER(
+			            CondAmb, 
+			            'CondAmb'[MaxWindVel(m/s)] >= 12 || CondAmb[Hs(m)] >= 0.2 || CondAmb[h(m)] <= 5
+			            )
+			        )
+			    )
+			)
+			/ 168 * 100
+			*/
+			
+			```
+		lineageTag: 2092b319-70fc-4313-aa9e-0194fbfa5f28
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Prueba dispon nan' =
+			
+			VAR FilasValidas =
+			    FILTER(
+			        CondAmb,
+			        CondAmb[MaxWindVel(m/s)] = CondAmb[MaxWindVel(m/s)] || CondAmb[Hs(m)] = CondAmb[Hs(m)] || CondAmb[h(m)] = CondAmb[h(m)]  -- excluye NaN
+			    )
+			VAR TotalValidas =
+			    COUNTROWS(FilasValidas)
+			VAR Condicion =
+			    FILTER(
+			        FilasValidas,
+			        CondAmb[MaxWindVel(m/s)] >= 12 || CondAmb[Hs(m)] >= 0.2 || CondAmb[h(m)] <= 5
+			    )
+			RETURN
+			COUNTROWS(FilasValidas)
+			/*
+			COALESCE(
+			    DIVIDE(
+			        COUNTROWS(Condicion),
+			        TotalValidas
+			    ) * 100,
+			    0
+			)
+			*/
+		formatString: 0
+		lineageTag: 3b110515-5231-49f4-969a-c3bfa8ff9fcd
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: b3f7f37c-5b23-482f-9c56-2eb0450e6bab
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = d34ef1f835454855b37d2e90a205449f
+
