@@ -1,0 +1,430 @@
+table Isigenere
+	lineageTag: 6a79add5-619b-4b68-84ed-9de23f898873
+
+	column Xmean_cog_m
+		dataType: double
+		lineageTag: 815d84d4-24d7-4fda-9b40-e204b8baa78b
+		summarizeBy: sum
+		sourceColumn: Xmean_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Xmax_cog_m
+		dataType: double
+		lineageTag: 97dcad22-c857-4c49-8289-214fb2e635d7
+		summarizeBy: sum
+		sourceColumn: Xmax_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Xmin_cog_m
+		dataType: double
+		lineageTag: dcdd281a-395e-47dd-b810-22710f924b00
+		summarizeBy: sum
+		sourceColumn: Xmin_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ymean_cog_m
+		dataType: double
+		lineageTag: 4b30756f-7d8d-4a1a-8c89-cd4331c03e58
+		summarizeBy: sum
+		sourceColumn: Ymean_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ymax_cog_m
+		dataType: double
+		lineageTag: 17ecffca-7fa1-45cb-a144-73fa58cc9da6
+		summarizeBy: sum
+		sourceColumn: Ymax_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ymin_cog_m
+		dataType: double
+		lineageTag: 7dd5eb47-2f08-49f1-9112-f4ec1cd0b9a3
+		summarizeBy: sum
+		sourceColumn: Ymin_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Zmean_cog_m
+		dataType: double
+		lineageTag: 7f48840a-d435-44a6-b6f8-e4063f8c2182
+		summarizeBy: sum
+		sourceColumn: Zmean_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Zmax_cog_m
+		dataType: double
+		lineageTag: fb0202e6-cc38-4192-9dd7-cf4df48c0be6
+		summarizeBy: sum
+		sourceColumn: Zmax_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Zmin_cog_m
+		dataType: double
+		lineageTag: e7ad6383-fdba-40da-835b-8f47da4500a0
+		summarizeBy: sum
+		sourceColumn: Zmin_cog_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rollmean_deg
+		dataType: double
+		lineageTag: d44ba28f-5286-4c12-9765-de0222d9f204
+		summarizeBy: sum
+		sourceColumn: Rollmean_deg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rollmax_deg
+		dataType: double
+		lineageTag: e681fac9-014a-4a58-b6bf-b70f3d8e65e2
+		summarizeBy: sum
+		sourceColumn: Rollmax_deg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rollmin_deg
+		dataType: double
+		lineageTag: f8f9111c-4c25-447a-8ba3-4304e22c998f
+		summarizeBy: sum
+		sourceColumn: Rollmin_deg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Pitchmean_deg
+		dataType: double
+		lineageTag: f57ba190-e6dc-483c-9710-6dfbad0793ec
+		summarizeBy: sum
+		sourceColumn: Pitchmean_deg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Pitchmax_deg
+		dataType: double
+		lineageTag: cf374e36-d998-4f9f-92b8-b4c30592df75
+		summarizeBy: sum
+		sourceColumn: Pitchmax_deg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Pitchmin_deg
+		dataType: double
+		lineageTag: dcb2bec2-6a5f-4bf2-973f-08555ad77e6b
+		summarizeBy: sum
+		sourceColumn: Pitchmin_deg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Yawmean_deg
+		dataType: double
+		lineageTag: c2340c14-ab9f-43ea-87b2-fa70216784a0
+		summarizeBy: sum
+		sourceColumn: Yawmean_deg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC1mean_kg
+		dataType: double
+		lineageTag: 7ae12afa-cd2c-4a84-a91a-352fb7841438
+		summarizeBy: sum
+		sourceColumn: LC1mean_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC1max_kg
+		dataType: double
+		lineageTag: ff6e5d81-a234-4ff7-b0b9-7beab14f52aa
+		summarizeBy: sum
+		sourceColumn: LC1max_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC1min_kg
+		dataType: double
+		lineageTag: 2a61ab33-2497-4b0d-8986-4d52ead9afdb
+		summarizeBy: sum
+		sourceColumn: LC1min_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC2mean_kg
+		dataType: double
+		lineageTag: 64d9bb6d-81c9-42c6-ab68-871b88f124f0
+		summarizeBy: sum
+		sourceColumn: LC2mean_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC2max_kg
+		dataType: double
+		lineageTag: 1b3008d8-df50-4707-8409-ad9658e9bde9
+		summarizeBy: sum
+		sourceColumn: LC2max_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC2min_kg
+		dataType: double
+		lineageTag: 98311846-df85-426e-b689-4c7e29205c86
+		summarizeBy: sum
+		sourceColumn: LC2min_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC3mean_kg
+		dataType: double
+		lineageTag: eac36ddd-2ce0-4b4a-b7a8-7ea04a1909f8
+		summarizeBy: sum
+		sourceColumn: LC3mean_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC3max_kg
+		dataType: double
+		lineageTag: b65c811f-1165-4ee7-8c66-b4f792f4f2cd
+		summarizeBy: sum
+		sourceColumn: LC3max_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC3min_kg
+		dataType: double
+		lineageTag: 89bb79d6-fc44-4f22-a45b-4765d95b6e60
+		summarizeBy: sum
+		sourceColumn: LC3min_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC4mean_kg
+		dataType: double
+		lineageTag: 33a83fc4-be44-4586-8785-b3acd4ed7cfd
+		summarizeBy: sum
+		sourceColumn: LC4mean_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC4max_kg
+		dataType: double
+		lineageTag: 62cead82-5bc4-4e81-b53c-5e965bb2f688
+		summarizeBy: sum
+		sourceColumn: LC4max_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC4min_kg
+		dataType: double
+		lineageTag: d4db6f1c-e229-49dc-b9bc-2217e07a1ac1
+		summarizeBy: sum
+		sourceColumn: LC4min_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC5mean_kg
+		dataType: double
+		lineageTag: ab90d18a-7793-4336-8c5e-e83da581944a
+		summarizeBy: sum
+		sourceColumn: LC5mean_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC5max_kg
+		dataType: double
+		lineageTag: a335b62f-59bf-4c21-a211-7d88eac00aa1
+		summarizeBy: sum
+		sourceColumn: LC5max_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC5min_kg
+		dataType: double
+		lineageTag: 6153ff7c-de1f-4a0f-98a5-d04760911c2b
+		summarizeBy: sum
+		sourceColumn: LC5min_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC6mean_kg
+		dataType: double
+		lineageTag: 240d621b-3f0f-422f-b176-99d7159f4f64
+		summarizeBy: sum
+		sourceColumn: LC6mean_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC6max_kg
+		dataType: double
+		lineageTag: fda63ef7-b662-438c-a591-658bd5a11791
+		summarizeBy: sum
+		sourceColumn: LC6max_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC6min_kg
+		dataType: double
+		lineageTag: 61611206-94a7-49b5-a55f-232b04f94b91
+		summarizeBy: sum
+		sourceColumn: LC6min_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC7mean_kg
+		dataType: double
+		lineageTag: 31c15f2d-ca8e-405c-afc4-884b5bb77ca5
+		summarizeBy: sum
+		sourceColumn: LC7mean_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC7max_kg
+		dataType: double
+		lineageTag: fe0d4a01-3989-4730-8cae-b49b6831d680
+		summarizeBy: sum
+		sourceColumn: LC7max_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LC7min_kg
+		dataType: double
+		lineageTag: 64ad998b-782d-4a98-9fed-5b6d7b5a78e8
+		summarizeBy: sum
+		sourceColumn: LC7min_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2d37c313-738d-40fc-b6bb-76fd033ccaaf
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 43bf7ea6-6bdb-4665-94d5-c94d57102ba1
+			defaultHierarchy: LocalDateTable_3708ed58-508b-49aa-a0bf-59a8d6626c9b.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Periodo
+		dataType: string
+		lineageTag: f36dff96-0ba2-434b-ac3d-1871a13ad330
+		summarizeBy: none
+		sourceColumn: Periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_file
+		dataType: string
+		lineageTag: b4feb8c2-565e-4e0a-8b5b-466462402926
+		summarizeBy: none
+		sourceColumn: source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Isigenere = m
+		mode: import
+		source =
+				let
+				    Origen = Value.NativeQuery(Databricks.Catalogs(host, http, [Catalog=catalogo, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]){[Name="precatalog",Kind="Database"]}[Data], "SELECT * FROM precatalog.samat_silver.slv_samat_sierrabrava_isigenere", null, [EnableFolding=true]),
+				    //Origen = Value.NativeQuery(Databricks.Catalogs(host, http, [Catalog=catalogo, Database=null, EnableAutomaticProxyDiscovery=null]){[Name="precatalog",Kind="Database"]}[Data], "SELECT * FROM precatalog.samat_silver.slv_samat_sierrabrava_isigenere", null, [EnableFolding=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Date", type text}, {"Xmean_cog_m", type number}, {"Xmax_cog_m", type number}, {"Xmin_cog_m", type number}, {"Ymean_cog_m", type number}, {"Ymax_cog_m", type number}, {"Ymin_cog_m", type number}, {"Zmean_cog_m", type number}, {"Zmax_cog_m", type number}, {"Zmin_cog_m", type number}, {"Rollmean_deg", type number}, {"Rollmax_deg", type number}, {"Rollmin_deg", type number}, {"Pitchmean_deg", type number}, {"Pitchmax_deg", type number}, {"Pitchmin_deg", type number}, {"Yawmean_deg", type number}, {"LC1mean_kg", type number}, {"LC1max_kg", type number}, {"LC1min_kg", type number}, {"LC2mean_kg", type number}, {"LC2max_kg", type number}, {"LC2min_kg", type number}, {"LC3mean_kg", type number}, {"LC3max_kg", type number}, {"LC3min_kg", type number}, {"LC4mean_kg", type number}, {"LC4max_kg", type number}, {"LC4min_kg", type number}, {"LC5mean_kg", type number}, {"LC5max_kg", type number}, {"LC5min_kg", type number}, {"LC6mean_kg", type number}, {"LC6max_kg", type number}, {"LC6min_kg", type number}, {"LC7mean_kg", type number}, {"LC7max_kg", type number}, {"LC7min_kg", type number}}),
+				    #"Dividir columna por delimitador" = Table.SplitColumn(#"Tipo cambiado", "Date", Splitter.SplitTextByEachDelimiter({"_"}, QuoteStyle.None, false), {"Date.1", "Date.2"}),
+				    #"Dividir columna por delimitador1" = Table.SplitColumn(#"Dividir columna por delimitador", "Date.2", Splitter.SplitTextByDelimiter("_", QuoteStyle.Csv), {"Date.2.1", "Date.2.2"}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Dividir columna por delimitador1",{{"Date.1", type date}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado2",{"Date.2.1", "datalake_load_date", "datalake_load_day", "datalake_ingestion_uuid"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas",{{"Date.1", "Fecha"}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "Hora", each Text.Combine({[Date.2.2], ":00"})),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Hora", type time}}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado1",{"Date.2.2"}),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Columnas quitadas1", "Periodo", each Text.From(Date.WeekOfYear([Fecha])) & " - " & Text.From(Date.Year([Fecha]))),
+				    #"Columnas combinadas" = Table.CombineColumns(Table.TransformColumnTypes(#"Personalizada agregada1", {{"Fecha", type text}, {"Hora", type text}}, "es-ES"),{"Fecha", "Hora"},Combiner.CombineTextByDelimiter(" ", QuoteStyle.None),"Fecha"),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Columnas combinadas",{{"Fecha", type datetime}}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Tipo cambiado3",{"Fecha", "Xmean_cog_m", "Xmax_cog_m", "Xmin_cog_m", "Ymean_cog_m", "Ymax_cog_m", "Ymin_cog_m", "Zmean_cog_m", "Zmax_cog_m", "Zmin_cog_m", "Rollmean_deg", "Rollmax_deg", "Rollmin_deg", "Pitchmean_deg", "Pitchmax_deg", "Pitchmin_deg", "Yawmean_deg", "LC1mean_kg", "LC1max_kg", "LC1min_kg", "LC2mean_kg", "LC2max_kg", "LC2min_kg", "LC3mean_kg", "LC3max_kg", "LC3min_kg", "LC4mean_kg", "LC4max_kg", "LC4min_kg", "LC5mean_kg", "LC5max_kg", "LC5min_kg", "LC6mean_kg", "LC6max_kg", "LC6min_kg", "LC7mean_kg", "LC7max_kg", "LC7min_kg", "Periodo"}),
+				    #"Filas ordenadas" = Table.Sort(#"Columnas reordenadas",{{"Fecha", Order.Ascending}})
+				in
+				    #"Filas ordenadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

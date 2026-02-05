@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "FPV-AMAT"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "87cfa88c-6304-81e4-4bd4-503e5d106c49"
+  }
+}
