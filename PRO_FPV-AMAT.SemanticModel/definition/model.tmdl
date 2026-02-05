@@ -1,0 +1,25 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["CondAmb","Isigenere","OceanSun","host","http","catalogo"]
+
+ref table DateTableTemplate_67a51316-0fbd-462a-8868-1830dc0d72ce
+ref table Periodos
+ref table Medidas
+ref table CondAmb
+ref table Isigenere
+ref table OceanSun
+ref table LocalDateTable_3708ed58-508b-49aa-a0bf-59a8d6626c9b
+ref table LocalDateTable_dfb055c0-3e2f-431a-ad77-77c473300a1b
+ref table Calendario
+ref table LocalDateTable_a48723ca-a022-44a7-b265-e218adaf324e
+
+ref cultureInfo es-ES
+

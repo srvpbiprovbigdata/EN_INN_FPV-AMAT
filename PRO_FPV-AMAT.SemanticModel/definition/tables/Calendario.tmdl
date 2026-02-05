@@ -1,0 +1,29 @@
+table Calendario
+	lineageTag: f51bd94a-47c2-4a55-bcb6-0b6144f84871
+
+	column Date
+		formatString: General Date
+		lineageTag: 7d536296-ad34-4b2e-9a57-115db1f3ed28
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variación
+			isDefault
+			relationship: 8c4d3e31-883d-4b69-83fe-6a97dcb8becf
+			defaultHierarchy: LocalDateTable_a48723ca-a022-44a7-b265-e218adaf324e.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Periodo = FORMAT(WEEKNUM(Calendario[Date], 2), "00") & " - " & FORMAT(Calendario[Date], "YYYY")
+		lineageTag: f6a10ba2-13b8-43ff-aeaf-d4fdace45d9b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendario = calculated
+		mode: import
+		source = CALENDARAUTO()
+
+	annotation PBI_Id = 68c5d3148d604634bd9007613c90b00e
+

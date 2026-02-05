@@ -1,0 +1,99 @@
+table CondAmb
+	lineageTag: 65f1306e-fd63-4a3d-b8b5-a2a5583f549e
+
+	column Hs(m)
+		dataType: double
+		lineageTag: 2e815331-7023-47a8-8755-e6471b612bae
+		summarizeBy: sum
+		sourceColumn: Hs(m)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Tp(s)
+		dataType: double
+		lineageTag: ad44e81b-554c-494f-96c2-60b3aecc8c54
+		summarizeBy: sum
+		sourceColumn: Tp(s)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column h(m)
+		dataType: double
+		lineageTag: f15a90ef-f88b-415a-9c40-12c545ef6bb5
+		summarizeBy: sum
+		sourceColumn: h(m)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WindDir(deg)
+		dataType: double
+		lineageTag: 8eea7ffc-7625-421e-ab3b-eeb93bea167b
+		summarizeBy: sum
+		sourceColumn: WindDir(deg)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 410c2c34-a09f-4c9d-a757-1ed03a0e744b
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	column Periodo
+		dataType: string
+		lineageTag: cb989b41-08e9-4ed6-9734-f75b5a7425e1
+		summarizeBy: none
+		sourceColumn: Periodo
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxWindVel(m/s)
+		dataType: double
+		lineageTag: b37f6de4-b28b-4576-a803-08a1f03ec0aa
+		summarizeBy: sum
+		sourceColumn: MaxWindVel(m/s)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition CondAmb = m
+		mode: import
+		source =
+				let
+				    Origen = Value.NativeQuery(Databricks.Catalogs(host, http, [Catalog=catalogo, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]){[Name="procatalog",Kind="Database"]}[Data], "SELECT Date, Hs_m, Tp_m, h_m, MaxWindVel_m_s, WindDir_deg FROM procatalog.samat_silver.slv_samat_sierrabrava_condamb", null, [EnableFolding=true]),
+				    ////Origen = Value.NativeQuery(DatabricksMultiCloud.Catalogs(host, http, [Catalog=catalogo, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]){[Name="procatalog",Kind="Database"]}[Data], "SELECT Date, Hs_m, Tp_m, h_m, MaxWindVel_m_s, WindDir_deg FROM procatalog.samat_silver.slv_samat_sierrabrava_condamb", null, [EnableFolding=true]),
+				    //Origen = Value.NativeQuery(Databricks.Catalogs(host, http, [Catalog=catalogo, Database=null, EnableAutomaticProxyDiscovery=null]){[Name="procatalog",Kind="Database"]}[Data], "SELECT * FROM procatalog.samat_silver.slv_samat_sierrabrava_condamb", null, [EnableFolding=true]),
+				    //#"Columnas quitadas" = Table.RemoveColumns(Origen,{"datalake_load_date", "datalake_load_day", "datalake_ingestion_uuid"}),
+				    #"Dividir columna por delimitador" = Table.SplitColumn(Origen, "Date", Splitter.SplitTextByEachDelimiter({"_"}, QuoteStyle.None, false), {"Date.1", "Date.2"}),
+				    #"Dividir columna por delimitador1" = Table.SplitColumn(#"Dividir columna por delimitador", "Date.2", Splitter.SplitTextByDelimiter("_", QuoteStyle.Csv), {"Date.2.1", "Date.2.2"}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Dividir columna por delimitador1",{{"Date.1", type date}}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado2",{"Date.2.1"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas1",{{"Date.1", "Fecha"}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado", "Hora", each Text.Combine({[Date.2.2], ":00"})),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Personalizada agregada",{{"Hora", type time}}),
+				    #"Columnas quitadas2" = Table.RemoveColumns(#"Tipo cambiado1",{"Date.2.2"}),
+				    #"Semana del año insertada" = Table.AddColumn(#"Columnas quitadas2", "Periodo", each Text.From(Date.WeekOfYear([Fecha])) & " - " & Text.From(Date.Year([Fecha]))),
+				    #"Columnas combinadas" = Table.CombineColumns(Table.TransformColumnTypes(#"Semana del año insertada", {{"Fecha", type text}, {"Hora", type text}}, "es-ES"),{"Fecha", "Hora"},Combiner.CombineTextByDelimiter(" ", QuoteStyle.None),"Fecha"),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Columnas combinadas",{{"Fecha", type datetime}}),
+				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Tipo cambiado3",{{"Tp_m", "Tp(s)"}, {"Hs_m", "Hs(m)"}, {"h_m", "h(m)"}, {"MaxWindVel_m_s", "MaxWindVel(m/s)"}, {"WindDir_deg", "WindDir(deg)"}}),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas con nombre cambiado1",{"Fecha", "Hs(m)", "Tp(s)", "h(m)", "MaxWindVel(m/s)", "WindDir(deg)", "Periodo"}),
+				    #"Filas ordenadas" = Table.Sort(#"Columnas reordenadas",{{"Fecha", Order.Ascending}})
+				in
+				    #"Filas ordenadas"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

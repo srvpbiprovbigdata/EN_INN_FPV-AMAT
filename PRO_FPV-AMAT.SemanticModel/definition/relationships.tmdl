@@ -1,0 +1,31 @@
+relationship 43bf7ea6-6bdb-4665-94d5-c94d57102ba1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Isigenere.Fecha
+	toColumn: LocalDateTable_3708ed58-508b-49aa-a0bf-59a8d6626c9b.Date
+
+relationship d79b4355-5dbb-4def-9ff5-9a467d7c0d1e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: OceanSun.Fecha
+	toColumn: LocalDateTable_dfb055c0-3e2f-431a-ad77-77c473300a1b.Date
+
+relationship ac84a798-ad2b-bdae-f574-388a8f3f6b06
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: CondAmb.Fecha
+	toColumn: OceanSun.Fecha
+
+relationship 45dbcb03-f708-40a9-f94b-bfb3c3dd0d48
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: CondAmb.Fecha
+	toColumn: Isigenere.Fecha
+
+relationship 8c4d3e31-883d-4b69-83fe-6a97dcb8becf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.Date
+	toColumn: LocalDateTable_a48723ca-a022-44a7-b265-e218adaf324e.Date
+
+relationship aa17d156-9e60-8640-b3ba-ae9345804ce8
+	fromColumn: CondAmb.Periodo
+	toColumn: Periodos.Periodo
+

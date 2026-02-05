@@ -1,0 +1,17 @@
+table Periodos
+	lineageTag: ac1e86c4-294a-459f-8090-72da4e84d974
+
+	column Periodo
+		lineageTag: 8071f92f-17bd-41c1-aace-de7a7bc4a88b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendario[Periodo]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Periodos = calculated
+		mode: import
+		source = DISTINCT(Calendario[Periodo])
+
+	annotation PBI_Id = dd6e834c2de54527af4fa10556956939
+
